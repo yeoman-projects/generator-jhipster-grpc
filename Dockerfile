@@ -7,6 +7,7 @@ RUN \
   useradd jhipster -s /bin/bash -m -g jhipster -G sudo && \
   echo jhipster:jhipster |chpasswd 
 RUN mkdir /home/jhipster/app
+RUN chown -R jhipster:jhipster /home/jhipster/app
 USER jhipster
 ENV PATH $PATH:/usr/bin
 WORKDIR "/home/jhipster/app"
